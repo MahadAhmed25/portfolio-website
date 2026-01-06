@@ -1,38 +1,375 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+  min-height: 100vh;
+  background: #1a1a1a;
+  color: #e5e7eb;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  position: relative;
+  overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Navigation Bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.2);
+  padding: 0 50px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  pointer-events: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-link {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #10b981 0%, #14b8a6 20%, #3b82f6 40%, #8b5cf6 60%, #ec4899 100%);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: #ffffff;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-button {
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+.nav-button:hover {
+  background: linear-gradient(135deg, #10b981 0%, #14b8a6 20%, #3b82f6 40%, #8b5cf6 60%, #ec4899 100%);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+/* Hero Section */
+.hero-section {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0 50px;
+  padding-top: 80px;
+  overflow: hidden;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.hero-content {
+  max-width: 1200px;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  z-index: 2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.greeting {
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.name {
+  color: #ffffff;
+  font-size: 90px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  line-height: 1.1;
+  letter-spacing: -2px;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #10b981 0%, #14b8a6 15%, #3b82f6 35%, #8b5cf6 60%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
+  position: relative;
+}
+
+.university-section {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.university-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mcmaster-logo {
+  height: 48px;
+  width: auto;
+  opacity: 1;
+  object-fit: contain;
+}
+
+.student-text {
+  color: #9ca3af;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.tagline {
+  color: #9ca3af;
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.tagline .gradient-text {
+  font-size: 64px;
+}
+
+.bio {
+  color: #9ca3af;
+  font-size: 20px;
+  line-height: 1.8;
+  max-width: 600px;
+  margin-bottom: 48px;
+  font-weight: 400;
+}
+
+.cta-button {
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 18px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.12);
+}
+
+.cta-button span {
+  position: relative;
+  z-index: 2;
+}
+
+.button-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+  z-index: 0;
+}
+
+.cta-button:hover {
+  background: linear-gradient(135deg, #10b981 0%, #14b8a6 20%, #3b82f6 40%, #8b5cf6 60%, #ec4899 100%);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.6), 0 4px 20px rgba(139, 92, 246, 0.5);
+}
+
+.cta-button:hover .button-glow {
+  width: 300px;
+  height: 300px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 24px;
+    height: 70px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  .nav-button {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .hero-section {
+    padding: 0 24px;
+    padding-top: 70px;
+  }
+
+  .name {
+    font-size: 56px;
+    letter-spacing: -1px;
+  }
+
+  .tagline {
+    font-size: 42px;
+  }
+
+  .tagline .gradient-text {
+    font-size: 42px;
+  }
+
+  .university-section {
+    margin-bottom: 20px;
+  }
+
+  .mcmaster-logo {
+    height: 40px;
+  }
+
+  .student-text {
+    font-size: 14px;
+  }
+
+  .bio {
+    font-size: 18px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .nav-button {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .name {
+    font-size: 42px;
+  }
+
+  .tagline {
+    font-size: 32px;
+  }
+
+  .tagline .gradient-text {
+    font-size: 32px;
+  }
+
+  .university-section {
+    margin-bottom: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .university-info {
+    gap: 10px;
+  }
+
+  .mcmaster-logo {
+    height: 36px;
+  }
+
+  .student-text {
+    font-size: 13px;
+  }
+
+  .bio {
+    font-size: 16px;
+  }
+
+  .cta-button {
+    padding: 16px 28px;
+    font-size: 14px;
   }
 }
+
