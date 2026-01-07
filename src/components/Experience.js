@@ -70,7 +70,7 @@ function Experience() {
           >
             <div className="experience-header">
               <div className="company-info">
-                <img src="/Christie-Black-Logo-Low-Res.JPG" alt="Christie Digital Systems" className="company-logo" />
+                <img src="/CHRISTIE.svg" alt="Christie Digital Systems" className="company-logo christie-logo" />
                 <div>
                   <h3 className="company-name">Christie Digital Systems</h3>
                   <p className="job-title">Automation Developer</p>

@@ -22,7 +22,7 @@ function Navbar() {
           <a href="#experience" className="nav-link">02. Experience</a>
           <a href="#projects" className="nav-link">03. Projects</a>
           <a href="#contact" className="nav-link">04. Contact</a>
-          <button className="nav-button">Get In Touch</button>
+          <a href="#contact" className="nav-button">Get In Touch</a>
         </div>
       </div>
     </motion.nav>

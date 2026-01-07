@@ -104,6 +104,8 @@
   cursor: pointer;
   transition: all 0.3s ease;
   border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
   position: relative;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
@@ -447,6 +449,11 @@
   opacity: 0.95;
 }
 
+.christie-logo {
+  width: 80px;
+  height: 80px;
+}
+
 .company-name {
   color: #ffffff;
   font-size: 28px;
@@ -508,6 +515,98 @@
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+/* Contact Section */
+.contact-section {
+  min-height: 100vh;
+  padding: 120px 50px 80px;
+  position: relative;
+  z-index: 2;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  align-items: center;
+}
+
+.contact-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+}
+
+.contact-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(229, 231, 235, 0.1);
+  border-radius: 16px;
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+}
+
+.contact-item:hover {
+  border-color: rgba(229, 231, 235, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.contact-icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  flex-shrink: 0;
+  opacity: 0.95;
+}
+
+.contact-info {
+  width: 100%;
+}
+
+.contact-description {
+  color: #9ca3af;
+  font-size: 20px;
+  line-height: 1.8;
+  text-align: center;
+  margin-bottom: 64px;
+  max-width: 700px;
+  font-weight: 400;
+}
+
+.contact-label {
+  color: #9ca3af;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.contact-value {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 /* Responsive Design */
@@ -621,6 +720,11 @@
     height: 50px;
   }
 
+  .christie-logo {
+    width: 65px;
+    height: 65px;
+  }
+
   .company-name {
     font-size: 24px;
   }
@@ -640,6 +744,35 @@
 
   .metric-value {
     font-size: 28px;
+  }
+
+  .contact-section {
+    padding: 100px 24px 60px;
+  }
+
+  .contact-description {
+    font-size: 18px;
+    margin-bottom: 48px;
+    padding: 0 20px;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    max-width: 500px;
+  }
+
+  .contact-item {
+    padding: 28px 32px;
+    gap: 20px;
+  }
+
+  .contact-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .contact-value {
+    font-size: 19px;
   }
 
 }
@@ -896,6 +1029,11 @@
     height: 40px;
   }
 
+  .christie-logo {
+    width: 55px;
+    height: 55px;
+  }
+
   .company-name {
     font-size: 22px;
   }
@@ -920,6 +1058,39 @@
 
   .metric-value {
     font-size: 24px;
+  }
+
+  .contact-section {
+    padding: 80px 20px 50px;
+  }
+
+  .contact-description {
+    font-size: 16px;
+    margin-bottom: 40px;
+    padding: 0 10px;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .contact-item {
+    padding: 24px;
+    gap: 16px;
+  }
+
+  .contact-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .contact-value {
+    font-size: 16px;
+  }
+
+  .contact-value {
+    font-size: 18px;
   }
 }
 
