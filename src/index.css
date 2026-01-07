@@ -20,6 +20,15 @@ code {
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  scroll-padding-top: 100px;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 /* Custom scrollbar */
