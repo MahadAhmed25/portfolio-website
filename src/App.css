@@ -280,6 +280,9 @@
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .section-title {
@@ -289,50 +292,222 @@
   margin-bottom: 64px;
   line-height: 1.2;
   letter-spacing: -1px;
+  text-align: center;
 }
 
 .section-title .gradient-text {
   font-size: 64px;
-}
-
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-.focus-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(229, 231, 235, 0.1);
-  border-radius: 12px;
-  padding: 32px;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.focus-card:hover {
-  border-color: rgba(229, 231, 235, 0.3);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-}
-
-.card-title {
   color: #ffffff;
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  line-height: 1.3;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: #ffffff;
+  background-clip: unset;
+}
+
+.focus-list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  max-width: 900px;
+  width: 100%;
+}
+
+.focus-item {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  position: relative;
+  padding-left: 20px;
+}
+
+.focus-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, 
+    rgba(16, 185, 129, 0.3) 0%, 
+    rgba(59, 130, 246, 0.3) 50%, 
+    rgba(236, 72, 153, 0.3) 100%);
+  border-radius: 2px;
+}
+
+.focus-item:last-child::before {
+  height: 60%;
+}
+
+.focus-number {
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1;
   background: linear-gradient(135deg, #10b981 0%, #14b8a6 15%, #3b82f6 35%, #8b5cf6 60%, #ec4899 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  flex-shrink: 0;
+  width: 100px;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.focus-item:hover .focus-number {
+  opacity: 1;
+}
+
+.focus-content {
+  flex: 1;
+  padding-top: 8px;
+}
+
+.card-title {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.3;
 }
 
 .card-text {
   color: #9ca3af;
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 18px;
+  line-height: 1.8;
   font-weight: 400;
+}
+
+/* Experience Section */
+.experience-section {
+  min-height: 100vh;
+  padding: 120px 50px 80px;
+  position: relative;
+  z-index: 2;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  align-items: center;
+}
+
+.experience-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.experience-title {
+  text-align: center;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1000px;
+  width: 100%;
+  align-items: center;
+}
+
+.experience-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(229, 231, 235, 0.1);
+  border-radius: 16px;
+  padding: 40px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.experience-card:hover {
+  border-color: rgba(229, 231, 235, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  gap: 24px;
+}
+
+.company-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.company-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  flex-shrink: 0;
+  opacity: 0.95;
+}
+
+.company-name {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.job-title {
+  color: #9ca3af;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.experience-date {
+  color: #9ca3af;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  font-family: 'Fira Code', 'Courier New', monospace;
+}
+
+.experience-description {
+  color: #9ca3af;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 32px;
+  font-weight: 400;
+}
+
+.experience-metrics {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding-top: 24px;
+  border-top: 1px solid rgba(229, 231, 235, 0.1);
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metric-value {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #10b981 0%, #14b8a6 15%, #3b82f6 35%, #8b5cf6 60%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.metric-label {
+  color: #9ca3af;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* Responsive Design */
@@ -402,21 +577,69 @@
     font-size: 48px;
   }
 
-  .cards-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+  .focus-list {
+    gap: 40px;
   }
 
-  .focus-card {
-    padding: 24px;
+  .focus-item {
+    gap: 32px;
+    padding-left: 16px;
+  }
+
+  .focus-number {
+    font-size: 56px;
+    width: 80px;
   }
 
   .card-title {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .card-text {
-    font-size: 15px;
+    font-size: 16px;
+  }
+
+  .experience-section {
+    padding: 100px 24px 60px;
+  }
+
+  .experience-card {
+    padding: 32px;
+  }
+
+  .experience-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .company-info {
+    gap: 16px;
+  }
+
+  .company-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .company-name {
+    font-size: 24px;
+  }
+
+  .job-title {
+    font-size: 16px;
+  }
+
+  .experience-description {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
+  .experience-metrics {
+    gap: 24px;
+  }
+
+  .metric-value {
+    font-size: 28px;
   }
 
 }
@@ -437,12 +660,16 @@
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .techstack-grid {
   display: flex;
   flex-direction: column;
   gap: 64px;
+  width: 100%;
 }
 
 .tech-category {
@@ -561,12 +788,18 @@
     font-size: 36px;
   }
 
-  .cards-grid {
-    gap: 20px;
+  .focus-list {
+    gap: 32px;
   }
 
-  .focus-card {
-    padding: 20px;
+  .focus-item {
+    gap: 24px;
+    padding-left: 12px;
+  }
+
+  .focus-number {
+    font-size: 48px;
+    width: 60px;
   }
 
   .card-title {
@@ -575,7 +808,7 @@
   }
 
   .card-text {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .techstack-section {
@@ -644,6 +877,49 @@
   .tech-icon {
     width: 48px;
     height: 48px;
+  }
+
+  .experience-section {
+    padding: 80px 20px 50px;
+  }
+
+  .experience-card {
+    padding: 24px;
+  }
+
+  .company-info {
+    gap: 12px;
+  }
+
+  .company-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .company-name {
+    font-size: 22px;
+  }
+
+  .job-title {
+    font-size: 15px;
+  }
+
+  .experience-date {
+    font-size: 14px;
+  }
+
+  .experience-description {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .experience-metrics {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .metric-value {
+    font-size: 24px;
   }
 }
 
